@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+</head>
+
+<body style="overflow:scroll!important;">
+
+<div class="modal fade" id="myModal" role="dialog" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" onclick="modalDialogClose()">X
+                </button>
+                <h4 class="modal-title">Are you looking for ' ' ?</h4>
+            </div>
+            <div class="modal-body" id="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+    var html = "";
+    html += '<table align="center" >';
+    html += '<tr>';
+    html += '<td><div class="image" ><figure><img id="actual-image" src="images/h3.jpg"  />' +
+        '<img id="actual-image" src="images/h2.jpg"/></figure><figcaption class="centre">' +
+        '<b>Sofas<br/><a href="#">See more</a></b></figcaption></div></td>';
+    html += '<td style="padding:0 20px 0 20px;"></td>'
+    html += '<td><div class="image" ><figure><img id="actual-image" src="images/b1.jpg"/>' +
+        '<img id="actual-image" src="images/b3.jpg"/></figure><figcaption class="centre">' +
+        '<b>Boxes<br/><a href="#">See more</a></b></figcaption></div></td>';
+    html += '</tr>';
+    html += '</table>';
+
+
+
+    $('#modal-body').append(html);
+
+    $('#myModal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+
+    function modalDialogClose() {
+        $('#myModal').modal('hide');
+        $('#myModal').dialog("close");
+        $('#modal-body').html('');
+
+    }
+</script>
+</body>
+</html>
